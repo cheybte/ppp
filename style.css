@@ -1624,3 +1624,74 @@ body {
   color: #00d4ff !important;
   background: rgba(0, 212, 255, 0.1);
 }
+/* Style pour les IDs de certification */
+.credential-id {
+    font-size: 0.75rem;
+    color: #00d4ff;
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 212, 255, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 0.25rem;
+    border-left: 2px solid #00d4ff;
+}
+
+.cert-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 0.5rem;
+    border-left: 4px solid #00d4ff;
+    transition: all 0.3s ease;
+}
+
+.cert-item:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.cert-item strong {
+    display: block;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.cert-item span {
+    color: #6b7280;
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Icônes spécialisées */
+.cert-item .fa-broom {
+    color: #10b981; /* Vert pour Data Cleaning */
+}
+
+.cert-item .fa-robot {
+    color: #ff6b6b; /* Rouge pour ML */
+}
+
+.cert-item .fa-book-open {
+    color: #8b5cf6; /* Violet pour Jupyter */
+}
+
+.cert-item .fa-git-alt {
+    color: #f05032; /* Orange pour Git */
+}
+
+.cert-item .fa-database {
+    color: #4ecdc4; /* Cyan pour SQL */
+}
+
+.cert-item .fa-language {
+    color: #f59e0b; /* Jaune pour DELF */
+}
+
+.cert-item .fa-globe {
+    color: #06b6d4; /* Bleu pour English */
+}
