@@ -5,30 +5,621 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed MED LEMINE BEDINE - Data Scientist & AI Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-title i {
+            color: #00d4ff;
+        }
+
+        .nav-subtitle {
+            font-size: 0.75rem;
+            color: #00d4ff;
+            font-weight: normal;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: transparent;
+            position: relative;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .highlight {
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            display: block;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-badge.ai {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .hero-badge.data {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+        }
+
+        .hero-badge.ml {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            color: #333;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+
+        .tech-item span {
+            font-size: 0.875rem;
+            color: #ccc;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+        }
+
+        .contact-item i {
+            color: #00d4ff;
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .ai-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .data-btn {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .data-btn:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .ai-glow {
+            position: absolute;
+            inset: -20px;
+            background: conic-gradient(from 0deg, #00d4ff, #ff6b6b, #4ecdc4, #00d4ff);
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.875rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.98);
+            color: #333;
+        }
+
+        .section-alt {
+            background: rgba(248, 250, 252, 0.98);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .section-header i {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-right: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #00d4ff, #4ecdc4);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .timeline-marker.emerald {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .timeline-marker.orange {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+        }
+
+        .timeline-marker.purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .formation-details {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .detail-item i {
+            color: #00d4ff;
+            width: 16px;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .badge-emerald {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #065f46;
+        }
+
+        .badge-orange {
+            background: linear-gradient(135deg, #fed7aa, #fdba74);
+            color: #9a3412;
+        }
+
+        .badge-purple {
+            background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
+            color: #581c87;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section p {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .contact-buttons .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #4ecdc4);
+        }
+
+        .contact-buttons .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .contact-buttons .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        .copyright {
+            color: #6b7280;
+            font-size: 0.875rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .tech-stack {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Active nav link */
+        .nav-link.active {
+            color: #00d4ff !important;
+            background: rgba(0, 212, 255, 0.1);
+        }
+    </style>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="neural-network">
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="node"></div>
-            <div class="connection"></div>
-            <div class="connection"></div>
-            <div class="connection"></div>
-        </div>
-        <div class="data-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -71,12 +662,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="typing-container">
-                        <h1 class="hero-title">
-                            <span class="typing-text">Mohamed MED LEMINE</span>
-                            <span class="highlight typing-text">BEDINE</span>
-                        </h1>
-                    </div>
+                    <h1 class="hero-title">
+                        Mohamed MED LEMINE
+                        <span class="highlight">BEDINE</span>
+                    </h1>
                     
                     <div class="hero-badges">
                         <span class="hero-badge ai">
@@ -139,11 +728,11 @@
                     </div>
 
                     <div class="hero-buttons">
-                        <button class="btn btn-primary ai-btn" onclick="scrollToSection('projets')">
+                        <button class="btn ai-btn" onclick="scrollToSection('projets')">
                             <i class="fas fa-robot"></i>
                             Voir mes projets IA
                         </button>
-                        <button class="btn btn-secondary data-btn" onclick="scrollToSection('experience')">
+                        <button class="btn data-btn" onclick="scrollToSection('experience')">
                             <i class="fas fa-chart-line"></i>
                             Mon parcours Data
                         </button>
@@ -154,25 +743,9 @@
                     <div class="image-container">
                         <div class="ai-glow"></div>
                         <img src="images/profile.jpg" alt="Mohamed MED LEMINE BEDINE" class="profile-img">
-                        <div class="data-overlay">
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
-                            <div class="data-point"></div>
-                        </div>
-                    </div>
-                    <div class="floating-icons">
-                        <i class="fas fa-brain floating-icon"></i>
-                        <i class="fas fa-chart-line floating-icon"></i>
-                        <i class="fas fa-robot floating-icon"></i>
-                        <i class="fas fa-database floating-icon"></i>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <div class="scroll-text">Découvrez mon expertise</div>
-            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
@@ -184,28 +757,28 @@
                     <div class="stat-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-number">6</div>
                     <div class="stat-label">Projets IA</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-number">8</div>
                     <div class="stat-label">Langages</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-number">4</div>
                     <div class="stat-label">Certifications</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-number">3</div>
                     <div class="stat-label">Années d'études</div>
                 </div>
             </div>
@@ -608,12 +1181,12 @@
                     <div class="skill-tags">
                         <span class="skill-tag tech">Django</span>
                         <span class="skill-tag tech">Flask</span>
-                        <span class="skill-tag tech">Docker</span>
+                        <span class="tech-tag tech">Docker</span>
                         <span class="skill-tag tech">Git</span>
-                        <span class="skill-tag tech">MySQL</span>
-                        <span class="skill-tag tech">MongoDB</span>
-                        <span class="skill-tag tech">Spark</span>
-                        <span class="skill-tag tech">AWS</span>
+                        <span class="tech-tag tech">MySQL</span>
+                        <span class="tech-tag tech">MongoDB</span>
+                        <span class="tech-tag tech">Spark</span>
+                        <span class="tech-tag tech">AWS</span>
                     </div>
                 </div>
 
@@ -820,7 +1393,57 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId)
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                })
+            }
+        }
+
+        // Active navigation link highlighting
+        function updateActiveNavLink() {
+            const sections = ["hero", "formation", "experience", "projets", "competences", "resources", "contact"]
+            const navLinks = document.querySelectorAll(".nav-link")
+            const scrollPosition = window.scrollY + 100
+
+            sections.forEach((sectionId, index) => {
+                const section = document.getElementById(sectionId)
+                if (section) {
+                    const { offsetTop, offsetHeight } = section
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        navLinks.forEach((link) => link.classList.remove("active"))
+                        if (navLinks[index]) {
+                            navLinks[index].classList.add("active")
+                        }
+                    }
+                }
+            })
+        }
+
+        // Event listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            // Add click event to navigation links
+            document.querySelectorAll(".nav-link").forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault()
+                    const targetId = this.getAttribute("href").substring(1)
+                    scrollToSection(targetId)
+                })
+            })
+
+            // Add scroll event listener
+            window.addEventListener("scroll", () => {
+                updateActiveNavLink()
+            })
+
+            // Initial call to set active link
+            updateActiveNavLink()
+        })
+    </script>
 </body>
 </html>
-
