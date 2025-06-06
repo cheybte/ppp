@@ -244,14 +244,24 @@ body {
 }
 
 .download-btn {
-  background: linear-gradient(135deg, #00d4ff, #0099cc);
-  border: none;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 600;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none; /* ← AJOUTÉ pour le lien */
+    display: inline-flex;   /* ← AJOUTÉ pour le lien */
+    align-items: center;    /* ← AJOUTÉ pour le lien */
+    gap: 0.5rem;           /* ← AJOUTÉ pour le lien */
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    color: white; /* ← AJOUTÉ pour garder la couleur blanche */
 }
 
 .download-btn:hover {
