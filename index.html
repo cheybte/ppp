@@ -1,775 +1,1490 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed MED LEMINE BEDINE - Data Scientist & AI Engineer</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-      * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-
-      body {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          line-height: 1.6;
-          color: #333;
-          scroll-behavior: smooth;
-          background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-          min-height: 100vh;
-      }
-
-      .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-      }
-
-      /* Navigation */
-      .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          background: rgba(10, 10, 10, 0.95);
-          backdrop-filter: blur(20px);
-          z-index: 1000;
-          border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-          padding: 1rem 0;
-      }
-
-      .nav-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: wrap;
-      }
-
-      .nav-title {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: #fff;
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          margin: 0;
-      }
-
-      .title-content {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-      }
-
-      .main-name {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: #fff;
-          white-space: nowrap;
-      }
-
-      .nav-subtitle {
-          font-size: 0.75rem;
-          color: #00d4ff;
-          font-weight: normal;
-          margin-top: 0.25rem;
-      }
-
-      .nav-content {
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-      }
-
-      .nav-menu {
-          display: flex;
-          gap: 1.5rem;
-          flex-wrap: wrap;
-          align-items: center;
-      }
-
-      .nav-link {
-          text-decoration: none;
-          color: #ccc;
-          font-weight: 500;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.5rem 1rem;
-          border-radius: 0.5rem;
-          font-size: 0.9rem;
-      }
-
-      .nav-link:hover {
-          color: #00d4ff;
-          background: rgba(0, 212, 255, 0.1);
-      }
-
-      .download-btn {
-          background: linear-gradient(135deg, #00d4ff, #0099cc);
-          border: none;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-weight: 600;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          white-space: nowrap;
-          flex-shrink: 0;
-      }
-
-      .download-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
-      }
-
-      /* Hero Section */
-      .hero {
-          padding: 120px 0 80px;
-          background: transparent;
-          position: relative;
-          color: white;
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-      }
-
-      .hero-content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-          align-items: center;
-      }
-
-      .hero-title {
-          font-size: 3.5rem;
-          font-weight: bold;
-          margin-bottom: 1rem;
-          line-height: 1.1;
-          color: #fff;
-      }
-
-      .highlight {
-          color: #00d4ff;
-          text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-          display: block;
-      }
-
-      .hero-badges {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 2rem;
-          flex-wrap: wrap;
-      }
-
-      .hero-badge {
-          padding: 0.5rem 1rem;
-          border-radius: 2rem;
-          font-weight: 600;
-          font-size: 0.875rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-      }
-
-      .hero-badge.ai {
-          background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-          color: white;
-      }
-
-      .hero-badge.data {
-          background: linear-gradient(135deg, #4ecdc4, #44a08d);
-          color: white;
-      }
-
-      .hero-badge.ml {
-          background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
-          color: #333;
-      }
-
-      .hero-subtitle {
-          font-size: 1.25rem;
-          color: #ccc;
-          margin-bottom: 1.5rem;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-      }
-
-      .hero-description {
-          font-size: 1.1rem;
-          color: #aaa;
-          margin-bottom: 2rem;
-          line-height: 1.7;
-      }
-
-      .tech-stack {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-bottom: 2rem;
-      }
-
-      .tech-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 1rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 0.5rem;
-          border: 1px solid rgba(0, 212, 255, 0.2);
-          transition: all 0.3s ease;
-      }
-
-      .tech-item:hover {
-          background: rgba(0, 212, 255, 0.1);
-          transform: translateY(-5px);
-      }
-
-      .tech-item i {
-          font-size: 1.5rem;
-          color: #00d4ff;
-      }
-
-      .tech-item span {
-          font-size: 0.875rem;
-          color: #ccc;
-      }
-
-      .contact-info {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 1rem;
-          margin-bottom: 2rem;
-      }
-
-      .contact-item {
-          display: flex;
-          align-items: center;
-          color: #ccc;
-          padding: 0.5rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 0.5rem;
-      }
-
-      .contact-item i {
-          color: #00d4ff;
-          margin-right: 0.5rem;
-          width: 20px;
-      }
-
-      .hero-buttons {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-      }
-
-      .btn {
-          padding: 0.75rem 1.5rem;
-          border-radius: 0.5rem;
-          font-weight: 600;
-          text-decoration: none;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-      }
-
-      .ai-btn {
-          background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
-          color: white;
-      }
-
-      .ai-btn:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
-      }
-
-      .data-btn {
-          background: transparent;
-          color: #00d4ff;
-          border: 2px solid #00d4ff;
-      }
-
-      .data-btn:hover {
-          background: #00d4ff;
-          color: #0a0a0a;
-          transform: translateY(-3px);
-      }
-
-      .hero-image {
-          display: flex;
-          justify-content: center;
-          position: relative;
-      }
-
-      .image-container {
-          position: relative;
-          width: 320px;
-          height: 320px;
-      }
-
-      .ai-glow {
-          position: absolute;
-          inset: -20px;
-          background: conic-gradient(from 0deg, #00d4ff, #ff6b6b, #4ecdc4, #00d4ff);
-          border-radius: 50%;
-          filter: blur(20px);
-          opacity: 0.3;
-          animation: rotate 10s linear infinite;
-      }
-
-      @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-      }
-
-      .profile-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 50%;
-          border: 4px solid rgba(255, 255, 255, 0.1);
-          position: relative;
-          z-index: 2;
-      }
-
-      /* Stats Section */
-      .stats-section {
-          padding: 60px 0;
-          background: rgba(0, 0, 0, 0.8);
-          border-top: 1px solid rgba(0, 212, 255, 0.2);
-          border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-      }
-
-      .stats-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 2rem;
-      }
-
-      .stat-item {
-          text-align: center;
-          color: white;
-          padding: 2rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 1rem;
-          border: 1px solid rgba(0, 212, 255, 0.2);
-          transition: all 0.3s ease;
-      }
-
-      .stat-item:hover {
-          background: rgba(0, 212, 255, 0.1);
-          transform: translateY(-5px);
-      }
-
-      .stat-icon {
-          font-size: 2rem;
-          color: #00d4ff;
-          margin-bottom: 1rem;
-      }
-
-      .stat-number {
-          font-size: 3rem;
-          font-weight: bold;
-          color: #fff;
-          margin-bottom: 0.5rem;
-      }
-
-      .stat-label {
-          color: #ccc;
-          font-size: 0.875rem;
-      }
-
-      /* Contact Section */
-      .contact-section {
-          background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
-          color: white;
-          padding: 80px 0;
-          text-align: center;
-          position: relative;
-      }
-
-      .contact-section h2 {
-          font-size: 2rem;
-          margin-bottom: 1rem;
-          position: relative;
-          z-index: 1;
-      }
-
-      .contact-section p {
-          color: #9ca3af;
-          margin-bottom: 2rem;
-          position: relative;
-          z-index: 1;
-      }
-
-      .contact-buttons {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
-          position: relative;
-          z-index: 1;
-          flex-wrap: wrap;
-      }
-
-      .contact-buttons .btn-primary {
-          background: linear-gradient(135deg, #00d4ff, #4ecdc4);
-      }
-
-      .contact-buttons .btn-secondary {
-          background: transparent;
-          color: #00d4ff;
-          border: 2px solid #00d4ff;
-      }
-
-      .contact-buttons .btn-secondary:hover {
-          background: #00d4ff;
-          color: #0a0a0a;
-      }
-
-      .copyright {
-          color: #6b7280;
-          font-size: 0.875rem;
-          position: relative;
-          z-index: 1;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
-          .main-name {
-              font-size: 1rem;
-              white-space: normal;
-              text-align: center;
-          }
-          
-          .hero-title {
-              font-size: 2.5rem;
-              text-align: center;
-          }
-          
-          .nav-title {
-              flex-direction: column;
-              text-align: center;
-              gap: 0.5rem;
-          }
-          
-          .title-content {
-              align-items: center;
-          }
-          .nav-container {
-              flex-direction: column;
-              gap: 1rem;
-              text-align: center;
-          }
-
-          .nav-content {
-              flex-direction: column;
-              gap: 1rem;
-              width: 100%;
-          }
-
-          .nav-menu {
-              justify-content: center;
-              width: 100%;
-              flex-wrap: wrap;
-          }
-
-          .download-btn {
-              width: auto;
-              align-self: center;
-          }
-
-          .hero-content {
-              grid-template-columns: 1fr;
-              text-align: center;
-              gap: 2rem;
-          }
-
-          .tech-stack {
-              grid-template-columns: repeat(2, 1fr);
-          }
-
-          .contact-info {
-              grid-template-columns: 1fr;
-          }
-
-          .hero-buttons {
-              justify-content: center;
-              flex-direction: column;
-          }
-
-          .contact-buttons {
-              flex-direction: column;
-              align-items: center;
-          }
-
-          .stats-grid {
-              grid-template-columns: repeat(2, 1fr);
-          }
-      }
-
-      /* Active nav link */
-      .nav-link.active {
-          color: #00d4ff !important;
-          background: rgba(0, 212, 255, 0.1);
-      }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed MED LEMINE BEDINE - Data Scientist & AI Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-title i {
+            color: #00d4ff;
+        }
+
+        .nav-subtitle {
+            font-size: 0.75rem;
+            color: #00d4ff;
+            font-weight: normal;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: transparent;
+            position: relative;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .highlight {
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            display: block;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-badge.ai {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .hero-badge.data {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+        }
+
+        .hero-badge.ml {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            color: #333;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+
+        .tech-item span {
+            font-size: 0.875rem;
+            color: #ccc;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+        }
+
+        .contact-item i {
+            color: #00d4ff;
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ai-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+        }
+
+        .ai-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+
+        .data-btn {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .data-btn:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+
+        .ai-glow {
+            position: absolute;
+            inset: -20px;
+            background: conic-gradient(from 0deg, #00d4ff, #ff6b6b, #4ecdc4, #00d4ff);
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.875rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.98);
+            color: #333;
+        }
+
+        .section-alt {
+            background: rgba(248, 250, 252, 0.98);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .section-header i {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-right: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #00d4ff, #4ecdc4);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        .timeline-marker.emerald {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .timeline-marker.orange {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+        }
+
+        .timeline-marker.purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .formation-details {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .detail-item i {
+            color: #00d4ff;
+            width: 16px;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .badge-emerald {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #065f46;
+        }
+
+        .badge-orange {
+            background: linear-gradient(135deg, #fed7aa, #fdba74);
+            color: #9a3412;
+        }
+
+        .badge-purple {
+            background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
+            color: #581c87;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section p {
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .contact-buttons .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #4ecdc4);
+        }
+
+        .contact-buttons .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .contact-buttons .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        .copyright {
+            color: #6b7280;
+            font-size: 0.875rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .tech-stack {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Active nav link */
+        .nav-link.active {
+            color: #00d4ff !important;
+            background: rgba(0, 212, 255, 0.1);
+        }
+    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
+    <!-- Navigation complète corrigée -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">
+                <i class="fas fa-brain"></i>
+                Mohamed MED LEMINE BEDINE
+                <span class="nav-subtitle">Data Scientist & AI Engineer</span>
+            </h1>
+            <div class="nav-content">
+                <div class="nav-menu">
+                    <a href="#hero" class="nav-link">
+                        <i class="fas fa-home"></i> Accueil
+                    </a>
+                    <a href="#formation" class="nav-link">
+                        <i class="fas fa-graduation-cap"></i> Formation
+                    </a>
+                    <a href="#experience" class="nav-link">
+                        <i class="fas fa-briefcase"></i> Expérience
+                    </a>
+                    <a href="#projets" class="nav-link">
+                        <i class="fas fa-robot"></i> Projets IA
+                    </a>
+                    <a href="#competences" class="nav-link">
+                        <i class="fas fa-cogs"></i> Compétences
+                    </a>
+                    <a href="#resources" class="nav-link">
+                        <i class="fab fa-github"></i> Resources
+                    </a>
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+                <!-- LE BOUTON CV PDF ICI, DANS LE BON CONTENEUR -->
+                <a href="photo/Cv_Mohamed_BEDINE.pdf" download="CV_Mohamed_BEDINE.pdf" class="download-btn">
+                    <i class="fas fa-download"></i> CV PDF
+                </a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-      <div class="nav-container">
-          <h1 class="nav-title">
-              <i class="fas fa-brain"></i>
-              <div class="title-content">
-                  <span class="main-name">Mohamed MED LEMINE BEDINE</span>
-                  <span class="nav-subtitle">Data Scientist & AI Engineer</span>
-              </div>
-          </h1>
-          <div class="nav-content">
-              <div class="nav-menu">
-                  <a href="#hero" class="nav-link">
-                      <i class="fas fa-home"></i> Accueil
-                  </a>
-                  <a href="#formation" class="nav-link">
-                      <i class="fas fa-graduation-cap"></i> Formation
-                  </a>
-                  <a href="#experience" class="nav-link">
-                      <i class="fas fa-briefcase"></i> Expérience
-                  </a>
-                  <a href="#projets" class="nav-link">
-                      <i class="fas fa-robot"></i> Projets IA
-                  </a>
-                  <a href="#competences" class="nav-link">
-                      <i class="fas fa-cogs"></i> Compétences
-                  </a>
-                  <a href="#resources" class="nav-link">
-                      <i class="fab fa-github"></i> Resources
-                  </a>
-                  <a href="#contact" class="nav-link">
-                      <i class="fas fa-envelope"></i> Contact
-                  </a>
-              </div>
-              <a href="photo/Cv_Mohamed_BEDINE.pdf" download="CV_Mohamed_BEDINE.pdf" class="download-btn">
-                  <i class="fas fa-download"></i> CV PDF
-              </a>
-          </div>
-      </div>
-  </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Mohamed MED LEMINE
+                        <span class="highlight">BEDINE</span>
+                    </h1>
+                    
+                    <div class="hero-badges">
+                        <span class="hero-badge ai">
+                            <i class="fas fa-brain"></i> AI Engineer
+                        </span>
+                        <span class="hero-badge data">
+                            <i class="fas fa-chart-line"></i> Data Scientist
+                        </span>
+                        <span class="hero-badge ml">
+                            <i class="fas fa-robot"></i> ML Specialist
+                        </span>
+                    </div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-      <div class="container">
-          <div class="hero-content">
-              <div class="hero-text">
-                  <h1 class="hero-title">
-                      Mohamed MED LEMINE
-                      <span class="highlight">BEDINE</span>
-                  </h1>
-                  
-                  <div class="hero-badges">
-                      <span class="hero-badge ai">
-                          <i class="fas fa-brain"></i> AI Engineer
-                      </span>
-                      <span class="hero-badge data">
-                          <i class="fas fa-chart-line"></i> Data Scientist
-                      </span>
-                      <span class="hero-badge ml">
-                          <i class="fas fa-robot"></i> ML Specialist
-                      </span>
-                  </div>
+                    <p class="hero-subtitle">
+                        <i class="fas fa-university"></i>
+                        École Supérieure Polytechnique de Nouakchott
+                    </p>
+                    
+                    <p class="hero-description">
+                        Spécialisé en <strong>Intelligence Artificielle</strong>, <strong>Machine Learning</strong> et <strong>Analyse de Données</strong>. 
+                        Passionné par la transformation des données en insights actionables et le développement de solutions IA innovantes.
+                    </p>
 
-                  <p class="hero-subtitle">
-                      <i class="fas fa-university"></i>
-                      École Supérieure Polytechnique de Nouakchott
-                  </p>
-                  
-                  <p class="hero-description">
-                      Spécialisé en <strong>Intelligence Artificielle</strong>, <strong>Machine Learning</strong> et <strong>Analyse de Données</strong>. 
-                      Passionné par la transformation des données en insights actionables et le développement de solutions IA innovantes.
-                  </p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Data Viz</span>
+                        </div>
+                    </div>
 
-                  <div class="tech-stack">
-                      <div class="tech-item">
-                          <i class="fab fa-python"></i>
-                          <span>Python</span>
-                      </div>
-                      <div class="tech-item">
-                          <i class="fas fa-database"></i>
-                          <span>SQL</span>
-                      </div>
-                      <div class="tech-item">
-                          <i class="fas fa-brain"></i>
-                          <span>Deep Learning</span>
-                      </div>
-                      <div class="tech-item">
-                          <i class="fas fa-chart-bar"></i>
-                          <span>Data Viz</span>
-                      </div>
-                  </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>23086@esp.mr</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+222 36871887</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ksar, Nouakchott</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>Mohamed Medlemine BEDINE</span>
+                        </div>
+                    </div>
 
-                  <div class="contact-info">
-                      <div class="contact-item">
-                          <i class="fas fa-envelope"></i>
-                          <span>R23086@esp.mr</span>
-                      </div>
-                      <div class="contact-item">
-                          <i class="fas fa-phone"></i>
-                          <span>+222 36871887</span>
-                      </div>
-                      <div class="contact-item">
-                          <i class="fas fa-map-marker-alt"></i>
-                          <span>Ksar, Nouakchott</span>
-                      </div>
-                      <div class="contact-item">
-                          <i class="fab fa-github"></i>
-                          <span>Mohamed Medlemine BEDINE</span>
-                      </div>
-                  </div>
+                    <div class="hero-buttons">
+                        <button class="btn ai-btn" onclick="scrollToSection('projets')">
+                            <i class="fas fa-robot"></i>
+                            Voir mes projets IA
+                        </button>
+                        <button class="btn data-btn" onclick="scrollToSection('experience')">
+                            <i class="fas fa-chart-line"></i>
+                            Mon parcours Data
+                        </button>
+                    </div>
+                </div>
 
-                  <div class="hero-buttons">
-                      <button class="btn ai-btn" onclick="scrollToSection('projets')">
-                          <i class="fas fa-robot"></i>
-                          Voir mes projets IA
-                      </button>
-                      <button class="btn data-btn" onclick="scrollToSection('experience')">
-                          <i class="fas fa-chart-line"></i>
-                          Mon parcours Data
-                      </button>
-                  </div>
-              </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <div class="ai-glow"></div>
+                        <img src="photo/my_2.jpg" alt="Mohamed MED LEMINE BEDINE" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-              <div class="hero-image">
-                  <div class="image-container">
-                      <div class="ai-glow"></div>
-                      <img src="images/profile.jpg" alt="Mohamed MED LEMINE BEDINE" class="profile-img">
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Projets IA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Langages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Années d'études</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Stats Section -->
-  <section class="stats-section">
-      <div class="container">
-          <div class="stats-grid">
-              <div class="stat-item">
-                  <div class="stat-icon">
-                      <i class="fas fa-project-diagram"></i>
-                  </div>
-                  <div class="stat-number">6</div>
-                  <div class="stat-label">Projets IA</div>
-              </div>
-              <div class="stat-item">
-                  <div class="stat-icon">
-                      <i class="fas fa-code"></i>
-                  </div>
-                  <div class="stat-number">8</div>
-                  <div class="stat-label">Langages</div>
-              </div>
-              <div class="stat-item">
-                  <div class="stat-icon">
-                      <i class="fas fa-certificate"></i>
-                  </div>
-                  <div class="stat-number">4</div>
-                  <div class="stat-label">Certifications</div>
-              </div>
-              <div class="stat-item">
-                  <div class="stat-icon">
-                      <i class="fas fa-graduation-cap"></i>
-                  </div>
-                  <div class="stat-number">3</div>
-                  <div class="stat-label">Années d'études</div>
-              </div>
-          </div>
-      </div>
-  </section>
+    <!-- Formation Section -->
+    <section id="formation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Formation en Data Science & IA</h2>
+            </div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-      <div class="container">
-          <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
-          <p>Intéressé par mes compétences en Data Science et IA ? Discutons de vos projets !</p>
-          <div class="contact-buttons">
-              <a href="mailto:R23086@esp.mr" class="btn btn-primary">
-                  <i class="fas fa-envelope"></i> R23086@esp.mr
-              </a>
-              <a href="tel:+22236871887" class="btn btn-secondary">
-                  <i class="fas fa-phone"></i> +222 36871887
-              </a>
-          </div>
-          <p class="copyright">© 2025 Mohamed MED LEMINE BEDINE - Data Scientist & AI Engineer. Tous droits réservés.</p>
-      </div>
-  </section>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker emerald">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>École Supérieure Polytechnique de Nouakchott (ESP)</h3>
+                        <p class="timeline-subtitle">Élève ingénieur en Statistique & Ingénierie de Données</p>
+                        <div class="formation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analyse statistique avancée</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-robot"></i>
+                                <span>Machine Learning & Deep Learning</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-database"></i>
+                                <span>Big Data & Data Engineering</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-emerald">2023 - Présent</span>
+                    </div>
+                </div>
 
-  <script>
-      // Smooth scrolling function
-      function scrollToSection(sectionId) {
-          const element = document.getElementById(sectionId)
-          if (element) {
-              element.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-              })
-          }
-      }
+                <div class="timeline-item">
+                    <div class="timeline-marker orange">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Institut Préparatoire aux Grandes Écoles d'Ingénieurs (IPGEI)</h3>
+                        <p class="timeline-subtitle">Admis au Concours National des Ingénieurs de la Mauritanie</p>
+                        <div class="formation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-square-root-alt"></i>
+                                <span>Mathématiques appliquées</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Programmation & Algorithmes</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-orange">2020 - 2023</span>
+                    </div>
+                </div>
 
-      // Active navigation link highlighting
-      function updateActiveNavLink() {
-          const sections = ["hero", "formation", "experience", "projets", "competences", "resources", "contact"]
-          const navLinks = document.querySelectorAll(".nav-link")
-          const scrollPosition = window.scrollY + 100
+                <div class="timeline-item">
+                    <div class="timeline-marker purple">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Lycée de Nouadhibou 3</h3>
+                        <p class="timeline-subtitle">Baccalauréat en Sciences Mathématiques</p>
+                        <span class="badge badge-purple">2013 - 2020</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-          sections.forEach((sectionId, index) => {
-              const section = document.getElementById(sectionId)
-              if (section) {
-                  const { offsetTop, offsetHeight } = section
-                  if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                      navLinks.forEach((link) => link.classList.remove("active"))
-                      if (navLinks[index]) {
-                          navLinks[index].classList.add("active")
-                      }
-                  }
-              }
-          })
-      }
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-briefcase"></i>
+                <h2>Expérience en Data Science & IA</h2>
+            </div>
 
-      // Event listeners
-      document.addEventListener("DOMContentLoaded", () => {
-          // Add click event to navigation links
-          document.querySelectorAll(".nav-link").forEach((link) => {
-              link.addEventListener("click", function (e) {
-                  e.preventDefault()
-                  const targetId = this.getAttribute("href").substring(1)
-                  scrollToSection(targetId)
-              })
-          })
+            <div class="experience-grid">
+                <div class="card ai-card">
+                    <div class="card-header">
+                        <div class="card-title-section">
+                            <h3>
+                                <i class="fas fa-brain"></i>
+                                Projet industriel entreprise (PIE)
+                            </h3>
+                            <div class="tech-indicators">
+                                <span class="tech-indicator django">Django</span>
+                                <span class="tech-indicator python">Python</span>
+                                <span class="tech-indicator data">Data Analysis</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-emerald">Octobre 2024 - Décembre 2024</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-subtitle">
+                            <i class="fas fa-laptop-code"></i>
+                            Stage en Alternance - Data Science
+                        </p>
+                        <p><strong>Plateforme de traitement de données géostatistiques – ESP, Nouakchott</strong></p>
+                        <ul>
+                            <li><i class="fas fa-database"></i> Développement d'une plateforme Django pour l'analyse de données géologiques</li>
+                            <li><i class="fas fa-upload"></i> Système d'importation et gestion de données de forage massives</li>
+                            <li><i class="fas fa-chart-line"></i> Intégration de visualisations interactives (cartes, graphiques) pour l'exploration</li>
+                            <li><i class="fas fa-cube"></i> Modélisation 3D des données géostatistiques</li>
+                        </ul>
+                    </div>
+                </div>
 
-          // Add scroll event listener
-          window.addEventListener("scroll", () => {
-              updateActiveNavLink()
-          })
+                <div class="card data-card">
+                    <div class="card-header">
+                        <div class="card-title-section">
+                            <h3>
+                                <i class="fas fa-industry"></i>
+                                Société Nationale Industrielle et Minière (SNIM)
+                            </h3>
+                            <div class="tech-indicators">
+                                <span class="tech-indicator excel">Excel</span>
+                                <span class="tech-indicator data">Data Management</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-orange">Juillet 2024 - Octobre 2024</span>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-subtitle">
+                            <i class="fas fa-search"></i>
+                            Stage de découverte - Analyse de données
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-shopping-cart"></i> Analyse des systèmes d'achats dans le Département d'Achat de la SNIM</li>
+                            <li><i class="fas fa-chart-bar"></i> Optimisation des processus de gestion des approvisionnements</li>
+                            <li><i class="fas fa-file-excel"></i> Traitement et analyse de données d'approvisionnement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-          // Initial call to set active link
-          updateActiveNavLink()
-      })
-  </script>
+    <!-- Projets Section -->
+    <section id="projets" class="section">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-robot"></i>
+                <h2>Projets IA & Data Science</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card ai-project emerald">
+                    <div class="project-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>Véhicule Autonome Agricole IA</h3>
+                        <p>IoT + Machine Learning + Computer Vision</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Développement d'un véhicule autonome avec <strong>capteurs IoT</strong> et <strong>modèles de deep learning</strong> pour l'agriculture de précision. Collecte automatisée de données et analyse prédictive.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-eye"></i>
+                                <span>Computer Vision</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-brain"></i>
+                                <span>Deep Learning</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>IoT Integration</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag flutter">Flask</span>
+                            <span class="tech-tag django">Django</span>
+                            <span class="tech-tag arduino">Arduino</span>
+                            <span class="tech-tag ml">Machine Learning</span>
+                        </div>
+                        <span class="badge badge-emerald">2023 - 2024</span>
+                    </div>
+                </div>
+
+                <div class="project-card data-project orange">
+                    <div class="project-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>Calculateur INPC - Analytics Platform</h3>
+                        <p>Statistical Analysis + Data Visualization</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Plateforme d'analyse statistique pour calculer l'<strong>indice national des prix</strong> avec <strong>visualisations interactives</strong> et <strong>prédictions économiques</strong>.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Statistical Analysis</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-line-chart"></i>
+                                <span>Predictive Models</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-dashboard"></i>
+                                <span>Interactive Dashboards</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag django">Django</span>
+                            <span class="tech-tag docker">Docker</span>
+                            <span class="tech-tag stats">Statistics</span>
+                        </div>
+                        <span class="badge badge-orange">2025 - Présent</span>
+                    </div>
+                </div>
+
+                <div class="project-card ai-project purple">
+                    <div class="project-icon">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>AI Traffic Violation Detection</h3>
+                        <p>Computer Vision + Object Detection + LSTM</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Système de <strong>détection automatique</strong> d'infractions routières utilisant <strong>YOLOv5</strong> pour la détection d'objets et <strong>LSTM</strong> pour l'analyse temporelle.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-video"></i>
+                                <span>Video Analysis</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-search"></i>
+                                <span>Object Detection</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-clock"></i>
+                                <span>Temporal Analysis</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag opencv">OpenCV</span>
+                            <span class="tech-tag pytorch">PyTorch</span>
+                            <span class="tech-tag yolo">YOLOv5</span>
+                            <span class="tech-tag lstm">LSTM</span>
+                        </div>
+                        <span class="badge badge-purple">2024 - 2025</span>
+                    </div>
+                </div>
+
+                <div class="project-card ai-project teal">
+                    <div class="project-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>AI Music Pattern Recognition</h3>
+                        <p>Audio Processing + LSTM + Cultural Heritage</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Reconnaissance des <strong>maqâms mauritaniens</strong> avec <strong>réseaux LSTM</strong> et <strong>analyse spectrale</strong>. Préservation du patrimoine musical via l'IA.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-waveform"></i>
+                                <span>Audio Processing</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-brain"></i>
+                                <span>Pattern Recognition</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-history"></i>
+                                <span>Cultural AI</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag numpy">NumPy</span>
+                            <span class="tech-tag librosa">LibROSA</span>
+                            <span class="tech-tag lstm">LSTM</span>
+                        </div>
+                        <span class="badge badge-teal">2024 - 2025</span>
+                    </div>
+                </div>
+
+                <div class="project-card ai-project indigo">
+                    <div class="project-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>RAG Agricultural Encyclopedia</h3>
+                        <p>NLP + Retrieval Augmented Generation + Transformers</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Système <strong>RAG</strong> pour génération de texte basé sur corpus Wikipédia agricole avec <strong>Hugging Face Transformers</strong> et <strong>recherche vectorielle</strong>.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-language"></i>
+                                <span>NLP</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-search"></i>
+                                <span>Vector Search</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-robot"></i>
+                                <span>Text Generation</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag python">Python</span>
+                            <span class="tech-tag transformers">Transformers</span>
+                            <span class="tech-tag rag">RAG</span>
+                            <span class="tech-tag nlp">NLP</span>
+                        </div>
+                        <span class="badge badge-indigo">2024 - 2025</span>
+                    </div>
+                </div>
+
+                <div class="project-card data-project slate">
+                    <div class="project-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-header">
+                        <h3>Geostatistics Data Platform</h3>
+                        <p>Spatial Analysis + Data Visualization + Django</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Plateforme complète pour <strong>analyse géostatistique</strong> avec <strong>visualisations 3D</strong> et <strong>modélisation spatiale</strong> des données de forage.</p>
+                        <div class="ai-features">
+                            <div class="ai-feature">
+                                <i class="fas fa-map"></i>
+                                <span>Spatial Analysis</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Modeling</span>
+                            </div>
+                            <div class="ai-feature">
+                                <i class="fas fa-chart-area"></i>
+                                <span>Data Visualization</span>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag django">Django</span>
+                            <span class="tech-tag postgresql">PostgreSQL</span>
+                            <span class="tech-tag gis">GIS</span>
+                            <span class="tech-tag viz">Data Viz</span>
+                        </div>
+                        <span class="badge badge-slate">PIE 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <i class="fas fa-cogs"></i>
+                <h2>Expertise Data Science & IA</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category ai-skills">
+                    <h3><i class="fas fa-brain"></i> Intelligence Artificielle</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag ai">Machine Learning</span>
+                        <span class="skill-tag ai">Deep Learning</span>
+                        <span class="skill-tag ai">Neural Networks</span>
+                        <span class="skill-tag ai">Computer Vision</span>
+                        <span class="skill-tag ai">NLP</span>
+                        <span class="skill-tag ai">LSTM/RNN</span>
+                        <span class="skill-tag ai">PyTorch</span>
+                        <span class="skill-tag ai">TensorFlow</span>
+                    </div>
+                </div>
+
+                <div class="skill-category data-skills">
+                    <h3><i class="fas fa-chart-line"></i> Data Science & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag data">Python</span>
+                        <span class="skill-tag data">R</span>
+                        <span class="skill-tag data">SQL</span>
+                        <span class="skill-tag data">Pandas</span>
+                        <span class="skill-tag data">NumPy</span>
+                        <span class="skill-tag data">Matplotlib</span>
+                        <span class="skill-tag data">Seaborn</span>
+                        <span class="skill-tag data">Jupyter</span>
+                    </div>
+                </div>
+
+                <div class="skill-category tech-skills">
+                    <h3><i class="fas fa-server"></i> Technologies & Outils</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag tech">Django</span>
+                        <span class="skill-tag tech">Flask</span>
+                        <span class="tech-tag tech">Docker</span>
+                        <span class="skill-tag tech">Git</span>
+                        <span class="tech-tag tech">MySQL</span>
+                        <span class="tech-tag tech">MongoDB</span>
+                        <span class="tech-tag tech">Spark</span>
+                        <span class="tech-tag tech">AWS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category programming-skills">
+                    <h3><i class="fas fa-code"></i> Programmation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag prog">Python</span>
+                        <span class="skill-tag prog">Scala</span>
+                        <span class="skill-tag prog">C/C++</span>
+                        <span class="skill-tag prog">JavaScript</span>
+                        <span class="skill-tag prog">HTML/CSS</span>
+                        <span class="skill-tag prog">Kobo</span>
+                        <span class="skill-tag prog">VBA</span>
+                        <span class="skill-tag prog">LaTeX</span>
+                        <span class="skill-tag prog">Bash</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="additional-skills">
+                <div class="languages-card">
+                    <h3><i class="fas fa-language"></i> Langues</h3>
+                    <div class="language-item">
+                        <span>Arabe</span>
+                        <span class="badge badge-emerald">Langue maternelle</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Français</span>
+                        <span class="badge badge-orange">Avancé</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Anglais</span>
+                        <span class="badge badge-purple">Courant</span>
+                    </div>
+                </div>
+
+                <div class="certifications-card">
+                    <h3><i class="fas fa-certificate"></i> Certifications Data Science & IA</h3>
+    
+                    <!-- Data Science & Machine Learning -->
+                    <div class="cert-item">
+                        <strong><i class="fas fa-broom"></i> Data Cleaning and Preprocessing with Pandas</strong>
+                        <span>365 DataScience - 2024</span>
+                        <div class="">Credential ID: CC-CB8E01EC9</div>
+                    </div>
+    
+                    <div class="cert-item">
+                        <strong><i class="fas fa-robot"></i> Machine Learning in Python</strong>
+                        <span>365 DataScience - 2024</span>
+                        <div class="">Credential ID: CC-D1E7BA9C60</div>
+                    </div>
+    
+                    <div class="cert-item">
+                        <strong><i class="fas fa-book-open"></i> Introduction to Jupyter</strong>
+                        <span>365 DataScience - 2024</span>
+                        <div class="">Credential ID: CC-43BFC83649</div>
+                    </div>
+    
+                    <!-- Outils de développement -->
+                    <div class="cert-item">
+                        <strong><i class="fab fa-git-alt"></i> Git and GitHub</strong>
+                        <span>Data Science 360 - 2024</span>
+                        <div class="">Credential ID: CC.AF5D9536C6</div>
+                    </div>
+    
+                    <div class="cert-item">
+                        <strong><i class="fas fa-database"></i> SQL Advanced</strong>
+                        <span>Data Science 360 - 2024</span>
+                        <div class="">Credential ID: CC.32B6F6722B</div>
+                    </div>
+    
+                    <!-- Langues -->
+                    <div class="cert-item">
+                        <strong><i class="fas fa-language"></i> DELF B2</strong>
+                        <span>Français - 2024</span>
+                    </div>
+    
+                    <div class="cert-item">
+                        <strong><i class="fas fa-globe"></i> Core English Language Test B1+</strong>
+                        <span>Tracktest CEFR - 2024</span>
+                        <div class="">Credential ID: 503259C</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <div class="section-header">
+                <i class="fab fa-github"></i>
+                <h2>Resources & AI Repositories</h2>
+            </div>
+            <p class="section-description">
+                Explorez le code source de mes projets IA et Data Science sur GitHub.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-card ai-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Véhicule Autonome Agricole</h3>
+                    <p>Code source du projet d'innovation avec Django et capteurs IoT pour la collecte de données agricoles.</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">ML</span>
+                    </div>
+                    <a href="https://github.com/cheybte/project-django" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+
+                <div class="resource-card data-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Calculateur INPC</h3>
+                    <p>Application web Django pour calculer l'indice national des prix à la consommation avec visualisations statistiques.</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Statistics</span>
+                    </div>
+                    <a href="https://github.com/cheybte/project-django" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+
+                <div class="resource-card ai-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <h3>Détection Infractions Routières</h3>
+                    <p>Système de détection automatique d'infractions routières utilisant OpenCV, PyTorch et YOLOv5.</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">YOLOv5</span>
+                    </div>
+                    <a href="https://github.com/cheybte/AI_Project" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+
+                <div class="resource-card ai-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Musique Traditionnelle IA</h3>
+                    <p>Reconnaissance des maqâms mauritaniens avec réseaux LSTM pour la préservation du patrimoine musical.</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">LibROSA</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <a href="https://github.com/cheybte/AI_Project" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+
+                <div class="resource-card ai-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Encyclopédie Agricole IA</h3>
+                    <p>Système RAG pour génération de texte basé sur corpus Wikipédia agricole avec Hugging Face Transformers.</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Transformers</span>
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                    <a href="https://github.com/cheybte/AI_Project" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+
+                <div class="resource-card data-resource">
+                    <div class="resource-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Plateforme Géostatistique</h3>
+                    <p>Plateforme Django pour traitement de données géostatistiques avec visualisations interactives (Projet PIE).</p>
+                    <div class="resource-tech">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">GIS</span>
+                        <span class="tech-tag">Viz</span>
+                    </div>
+                    <a href="https://github.com/cheybte/geostatistics-platform" target="_blank" class="resource-link">
+                        <i class="fab fa-github"></i> Voir le Repository
+                    </a>
+                </div>
+            </div>
+
+            <div class="github-profile">
+                <div class="github-card">
+                    <div class="github-avatar">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="github-info">
+                        <h3>Profil GitHub Complet</h3>
+                        <p>Explorez tous mes projets Data Science, IA et contributions sur GitHub.</p>
+                        <a href="https://github.com/cheybte" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-github"></i> Visiter mon GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
+            <p>Intéressé par mes compétences en Data Science et IA ? Discutons de vos projets !</p>
+            <div class="contact-buttons">
+                <a href="mailto:23086@esp.mr" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>23086@esp.mr
+                </a>
+                <a href="tel:+22236871887" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> +222 36871887
+                </a>
+                </div>
+                <!-- ✅ NOUVEAU : LinkedIn -->
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/mohamed-medlemine-bedine-43893523b/" target="_blank" style="color: #ccc; text-decoration: none;">
+                        Mohamed MED LEMINE BEDINE
+                    </a>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Mohamed MED LEMINE BEDINE - Data Scientist & AI Engineer. Tous droits réservés.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId)
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                })
+            }
+        }
+
+        // Active navigation link highlighting
+        function updateActiveNavLink() {
+            const sections = ["hero", "formation", "experience", "projets", "competences", "resources", "contact"]
+            const navLinks = document.querySelectorAll(".nav-link")
+            const scrollPosition = window.scrollY + 100
+
+            sections.forEach((sectionId, index) => {
+                const section = document.getElementById(sectionId)
+                if (section) {
+                    const { offsetTop, offsetHeight } = section
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        navLinks.forEach((link) => link.classList.remove("active"))
+                        if (navLinks[index]) {
+                            navLinks[index].classList.add("active")
+                        }
+                    }
+                }
+            })
+        }
+
+        // Event listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            // Add click event to navigation links
+            document.querySelectorAll(".nav-link").forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault()
+                    const targetId = this.getAttribute("href").substring(1)
+                    scrollToSection(targetId)
+                })
+            })
+
+            // Add scroll event listener
+            window.addEventListener("scroll", () => {
+                updateActiveNavLink()
+            })
+
+            // Initial call to set active link
+            updateActiveNavLink()
+        })
+    </script>
 </body>
 </html>
+
